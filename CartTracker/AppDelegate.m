@@ -7,12 +7,13 @@
 //
 
 #import "AppDelegate.h"
-//#import "BlueToothFinder.h"
+#import "BlueToothFinder.h"
 #import "BlueToothPeripheral.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) BlueToothPeripheral *peripheral;
+@property (nonatomic, strong) BlueToothFinder *central;
 
 @end
 
@@ -22,8 +23,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //BlueToothFinder *b = [[BlueToothFinder alloc] init];
-    _peripheral = [[BlueToothPeripheral alloc] init];
+    _central = [[BlueToothFinder alloc] init];
+    //_peripheral = [[BlueToothPeripheral alloc] init];
     
     return YES;
 }

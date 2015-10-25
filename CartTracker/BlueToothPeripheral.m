@@ -31,12 +31,12 @@
     NSLog(@"centralManagerDidUpdateState state = %ld", (long)peripheral.state);
     
     if (peripheral.state == CBPeripheralManagerStatePoweredOn) {
-        CBUUID *myServiceUUID = [CBUUID UUIDWithString:[[NSUUID UUID] UUIDString]];
+        //CBUUID *myServiceUUID = [CBUUID UUIDWithString:[[NSUUID UUID] UUIDString]];
+        CBUUID *myServiceUUID = [CBUUID UUIDWithString:@"231442ED-1E12-4F8B-B437-F0FE8567E0B4"];
         CBMutableService *myService = [[CBMutableService alloc] initWithType:myServiceUUID primary:YES];
         myService.characteristics = @[];
         [_cbManager addService:myService];
-        [_cbManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey :
-                                            @[myService.UUID] }];
+        [_cbManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[myService.UUID], CBAdvertisementDataLocalNameKey : @"cart_tracker" }];
     }
 }
 
