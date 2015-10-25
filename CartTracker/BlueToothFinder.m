@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) CBCentralManager *cbManager;
 @property (nonatomic, strong) NSDate *lastDate;
+@property (nonatomic) int avgRssi;
 
 @end
 
@@ -23,6 +24,7 @@
     NSLog(@"init");
     if (self = [super init]) {
         _cbManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+        _avgRssi = 0;
     }
     return self;
 }
@@ -30,7 +32,10 @@
 - (void)sendUrlGetRssi:(int)rssi uuid:(NSString*)uuid {
     //NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     //[request setHTTPMethod:@"GET"];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://quotacle.com:3000/api?beaconid=%d&uuid=%@&signalstrength=%d", 2, uuid, rssi]];
+    
+    _avgRssi = (rssi + _avgRssi) / 2;
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://quotacle.com:3000/api?beaconid=%d&uuid=%@&signalstrength=%d", 2, uuid, _avgRssi]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSDate *now = [NSDate date];
