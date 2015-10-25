@@ -14,6 +14,7 @@
 		9BB7A9B11BDC770D00872660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB7A9B01BDC770D00872660 /* Assets.xcassets */; };
 		9BB7A9B41BDC770D00872660 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB7A9B21BDC770D00872660 /* LaunchScreen.storyboard */; };
 		9BB7A9BD1BDC7DAC00872660 /* BlueToothFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7A9BC1BDC7DAC00872660 /* BlueToothFinder.m */; settings = {ASSET_TAGS = (); }; };
+		9BB7A9C01BDC895300872660 /* BlueToothPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7A9BF1BDC895300872660 /* BlueToothPeripheral.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		9BB7A9B51BDC770D00872660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BB7A9BB1BDC7DAC00872660 /* BlueToothFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothFinder.h; sourceTree = "<group>"; };
 		9BB7A9BC1BDC7DAC00872660 /* BlueToothFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothFinder.m; sourceTree = "<group>"; };
+		9BB7A9BE1BDC895300872660 /* BlueToothPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothPeripheral.h; sourceTree = "<group>"; };
+		9BB7A9BF1BDC895300872660 /* BlueToothPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothPeripheral.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 				9BB7A9A81BDC770D00872660 /* AppDelegate.m */,
 				9BB7A9BB1BDC7DAC00872660 /* BlueToothFinder.h */,
 				9BB7A9BC1BDC7DAC00872660 /* BlueToothFinder.m */,
+				9BB7A9BE1BDC895300872660 /* BlueToothPeripheral.h */,
+				9BB7A9BF1BDC895300872660 /* BlueToothPeripheral.m */,
 				9BB7A9AA1BDC770D00872660 /* ViewController.h */,
 				9BB7A9AB1BDC770D00872660 /* ViewController.m */,
 				9BB7A9AD1BDC770D00872660 /* Main.storyboard */,
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB7A9AC1BDC770D00872660 /* ViewController.m in Sources */,
+				9BB7A9C01BDC895300872660 /* BlueToothPeripheral.m in Sources */,
 				9BB7A9A91BDC770D00872660 /* AppDelegate.m in Sources */,
 				9BB7A9BD1BDC7DAC00872660 /* BlueToothFinder.m in Sources */,
 				9BB7A9A61BDC770D00872660 /* main.m in Sources */,

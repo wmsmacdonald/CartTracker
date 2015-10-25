@@ -41,7 +41,7 @@
 }
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
-    NSLog(@"centralManagerDidUpdateState state = %d", central.state);
+    NSLog(@"centralManagerDidUpdateState state = %ld", (long)central.state);
 }
 
 @end
