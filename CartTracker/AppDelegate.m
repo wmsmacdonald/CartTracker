@@ -12,6 +12,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) BlueToothPeripheral *peripheral;
+
 @end
 
 @implementation AppDelegate
@@ -21,8 +23,7 @@
     // Override point for customization after application launch.
     
     //BlueToothFinder *b = [[BlueToothFinder alloc] init];
-    BlueToothPeripheral *b = [[BlueToothPeripheral alloc] init];
-    [b go];
+    _peripheral = [[BlueToothPeripheral alloc] init];
     
     return YES;
 }

@@ -25,20 +25,19 @@
     return self;
 }
 
-- (void)go {
-    NSLog(@"go");
-    CBUUID *myServiceUUID = [CBUUID UUIDWithString:@"244F0C5F-BD49-4EDC-8B3C-CC34AE509465"];
-    CBMutableService *myService = [[CBMutableService alloc] initWithType:myServiceUUID primary:YES];
-    myService.characteristics = @[];
-    [_cbManager addService:myService];
-    [_cbManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey :
-                                                 @[myService.UUID] }];
-}
-
 #pragma mark - CBPeripheralManagerDelegate
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
     NSLog(@"centralManagerDidUpdateState state = %ld", (long)peripheral.state);
+    
+    if (peripheral.state == CBPeripheralManagerStatePoweredOn) {
+        CBUUID *myServiceUUID = [CBUUID UUIDWithString:[[NSUUID UUID] UUIDString]];
+        CBMutableService *myService = [[CBMutableService alloc] initWithType:myServiceUUID primary:YES];
+        myService.characteristics = @[];
+        [_cbManager addService:myService];
+        [_cbManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey :
+                                            @[myService.UUID] }];
+    }
 }
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral

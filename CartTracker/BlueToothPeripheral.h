@@ -10,6 +10,4 @@
 
 @interface BlueToothPeripheral : NSObject
 
-- (void)go;
-
 @end
