@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BlueToothFinder.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    BlueToothFinder *b = [[BlueToothFinder alloc] init];
+    [b go];
+    
     return YES;
 }
 
